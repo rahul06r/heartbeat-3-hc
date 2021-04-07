@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart beat</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: #111111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    
+    .heart {
+        height: 70px;
+        width: 70px;
+        background: #ff0000;
+        position: relative;
+        transform: rotate(-45deg);
+        animation: heart 1s linear infinite;
+        box-shadow: -10px -10px 60px #ff0000;
+    }
+    
+    @keyframes heart {
+        0% {
+            transform: rotate(-45deg) scale(1.03);
+            box-shadow: -10px -10px 30px #ff0000;
+        }
+        60% {
+            transform: rotate(-45deg) scale(1.0);
+            box-shadow: -10px -10px 520px #ff0000, -10px 10px 90px #ff0000;
+            ;
+        }
+        100% {
+            transform: rotate(-45deg) scale(.8);
+            box-shadow: 10px 10px 320px #ff0000;
+        }
+    }
+    
+    .heart::before {
+        content: "";
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        background: #ff0000;
+        top: -50%;
+        border-radius: 50px;
+        box-shadow: -10px -10px 90px #ff0000;
+    }
+    
+    .heart::after {
+        content: "";
+        position: absolute;
+        height: 70px;
+        width: 70px;
+        background: #ff0000;
+        right: -50%;
+        border-radius: 50px;
+        box-shadow: 10px 10px 90px #ff0000;
+    }
+</style>
+
+<body>
+    <div class="heart"></div>
+
+</body>
+
+</html>
